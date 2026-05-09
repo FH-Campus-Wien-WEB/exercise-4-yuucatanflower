@@ -1,30 +1,5 @@
 {
   "joe": {
-    "tt0399295": {
-      "imdbID": "tt0399295",
-      "Title": "Lord of War",
-      "Released": "2005-09-15",
-      "Runtime": 122,
-      "Genres": [
-        "Crime",
-        "Drama"
-      ],
-      "Directors": [
-        "Andrew Niccol"
-      ],
-      "Writers": [
-        "Andrew Niccol"
-      ],
-      "Actors": [
-        "Nicolas Cage",
-        "Ethan Hawke",
-        "Jared Leto"
-      ],
-      "Plot": "An arms dealer confronts the morality of his work as he is being chased by an INTERPOL Agent.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNThlY2NkYmMtNTFhNi00MzBiLWJmNzEtZjk5MzYwYWU2MjllXkEyXkFqcGc@._V1_SX300.jpg",
-      "Metascore": 62,
-      "imdbRating": 7.6
-    },
     "tt0167260": {
       "imdbID": "tt0167260",
       "Title": "The Lord of the Rings: The Return of the King",
@@ -79,6 +54,169 @@
       "Poster": "https://m.media-amazon.com/images/M/MV5BY2RiOTM0ZDgtNDRlMi00MDMzLWI1NDYtY2NjZDM4YTkwNWVlXkEyXkFqcGc@._V1_SX300.jpg",
       "Metascore": 67,
       "imdbRating": 6.9
+    },
+    "tt0133093": {
+      "imdbID": "tt0133093",
+      "Title": "The Matrix",
+      "Released": "1999-03-30",
+      "Runtime": 136,
+      "Genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "Directors": [
+        "Lana Wachowski",
+        "Lilly Wachowski"
+      ],
+      "Writers": [
+        "Lilly Wachowski",
+        "Lana Wachowski"
+      ],
+      "Actors": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Carrie-Anne Moss"
+      ],
+      "Plot": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+      "Metascore": 73,
+      "imdbRating": 8.7
+    },
+    "tt0253474": {
+      "imdbID": "tt0253474",
+      "Title": "The Pianist",
+      "Released": "2003-03-27",
+      "Runtime": 150,
+      "Genres": [
+        "Biography",
+        "Drama",
+        "Music"
+      ],
+      "Directors": [
+        "Roman Polanski"
+      ],
+      "Writers": [
+        "Ronald Harwood",
+        "Wladyslaw Szpilman"
+      ],
+      "Actors": [
+        "Adrien Brody",
+        "Thomas Kretschmann",
+        "Frank Finlay"
+      ],
+      "Plot": "During WWII, acclaimed Polish musician Wladyslaw faces various struggles as he loses contact with his family. As the situation worsens, he hides in the ruins of Warsaw in order to survive.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjEwNmEwYjgtNTk3ZC00NjljLTg5ZDctZTY3ZGQwZjRkZmQxXkEyXkFqcGc@._V1_QL75_UY562_CR14,0,380,562_.jpg",
+      "Metascore": 85,
+      "imdbRating": 8.5
+    },
+    "tt1375666": {
+      "imdbID": "tt1375666",
+      "Title": "Inception",
+      "Released": "2010-07-15",
+      "Runtime": 148,
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "Directors": [
+        "Christopher Nolan"
+      ],
+      "Writers": [
+        "Christopher Nolan"
+      ],
+      "Actors": [
+        "Leonardo DiCaprio",
+        "Joseph Gordon-Levitt",
+        "Elliot Page"
+      ],
+      "Plot": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO, but his tragic past may doom the project and his team to disaster.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "Metascore": 74,
+      "imdbRating": 8.8
+    },
+    "tt0172495": {
+      "imdbID": "tt0172495",
+      "Title": "Gladiator",
+      "Released": "2000-05-04",
+      "Runtime": 155,
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "Directors": [
+        "Ridley Scott"
+      ],
+      "Writers": [
+        "David Franzoni",
+        "John Logan",
+        "William Nicholson"
+      ],
+      "Actors": [
+        "Russell Crowe",
+        "Joaquin Phoenix",
+        "Connie Nielsen"
+      ],
+      "Plot": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYWQ4YmNjYjEtOWE1Zi00Y2U4LWI4NTAtMTU0MjkxNWQ1ZmJiXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "Metascore": 67,
+      "imdbRating": 8.5
+    },
+    "tt0372784": {
+      "imdbID": "tt0372784",
+      "Title": "Batman Begins",
+      "Released": "2005-06-14",
+      "Runtime": 140,
+      "Genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "Directors": [
+        "Christopher Nolan"
+      ],
+      "Writers": [
+        "Bob Kane",
+        "David S. Goyer",
+        "Christopher Nolan"
+      ],
+      "Actors": [
+        "Christian Bale",
+        "Michael Caine",
+        "Ken Watanabe"
+      ],
+      "Plot": "After witnessing his parents' death, billionaire Bruce Wayne learns the art of fighting to confront injustice. When he returns to Gotham as Batman, he must stop a secret society that intends to destroy the city.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMzA2NDQzZDEtNDU5Ni00YTlkLTg2OWEtYmQwM2Y1YTBjMjFjXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "Metascore": 70,
+      "imdbRating": 8.2
+    },
+    "tt0816692": {
+      "imdbID": "tt0816692",
+      "Title": "Interstellar",
+      "Released": "2014-11-06",
+      "Runtime": 169,
+      "Genres": [
+        "Adventure",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "Directors": [
+        "Christopher Nolan"
+      ],
+      "Writers": [
+        "Jonathan Nolan",
+        "Christopher Nolan"
+      ],
+      "Actors": [
+        "Matthew McConaughey",
+        "Anne Hathaway",
+        "Jessica Chastain"
+      ],
+      "Plot": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "Metascore": 74,
+      "imdbRating": 8.7
     }
   },
   "jane": {

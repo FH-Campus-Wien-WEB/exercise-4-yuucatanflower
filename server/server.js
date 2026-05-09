@@ -43,6 +43,17 @@ app.post("/login", function (req, res) {
 // protection. Implement logout by destroying the session 
 // with error handling. Protect all endpoints that need 
 // authentication with `requireLogin`.
+app.get("/logout", function (req, res) {
+  if (req.session) {
+    req.session.destroy(() => {
+      res.clearCookie('connect.sid');
+      res.sendStatus(200);
+    });
+  } else {
+    res.clearCookie('connect.sid');
+    res.sendStatus(200);
+  }
+});
 
 app.get("/session", function (req, res) {
   if (req.session.user) {
@@ -85,6 +96,45 @@ app.put("/movies/:imdbID", function (req, res) {
     // Task 2.3: Fetch the movie data from OmdbAPI, follow the pattern used further down 
     // in the GET /search endpoint. Implement conversion of the OmdbAPI response to the 
     // movie format used in the frontend. Make sure to handle errors and timeouts properly.
+
+    const url = `http://www.omdbapi.com/?i=${imdbID}&apikey=${config.omdbApiKey}`;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), config.omdbTimeoutMs);
+
+    fetch(url, { signal: controller.signal })
+        .then(apiRes => {
+          clearTimeout(timeoutId);
+          if (!apiRes.ok) return res.sendStatus(apiRes.status);
+          return apiRes.json();
+        })
+        .then(data => {
+          if (data.Response === 'False') return res.sendStatus(404);
+
+          // Convert the OmdbAPI response to our internal movie format
+          const newMovie = {
+            imdbID: data.imdbID,
+            Title: data.Title,
+            Released: data.Released !== 'N/A' ? new Date(data.Released).toISOString().split('T')[0] : null,
+            Runtime: parseInt(data.Runtime) || 0, // converts "150 min" to 150
+            Genres: data.Genre ? data.Genre.split(", ") : [],
+            Directors: data.Director ? data.Director.split(", ") : [],
+            Writers: data.Writer ? data.Writer.split(", ") : [],
+            Actors: data.Actors ? data.Actors.split(", ") : [],
+            Plot: data.Plot,
+            Poster: data.Poster,
+            Metascore: parseInt(data.Metascore) || 0,
+            imdbRating: parseFloat(data.imdbRating) || 0
+          };
+
+          // Save it to the specific user's collection
+          movieModel.setUserMovie(username, imdbID, newMovie);
+          res.sendStatus(201); // HTTP 201 Created
+        })
+        .catch(err => {
+          clearTimeout(timeoutId);
+          console.error('OMDb API error:', err);
+          res.sendStatus(500);
+        });
   } else {
     movieModel.setUserMovie(username, imdbID, req.body);
     res.sendStatus(200);

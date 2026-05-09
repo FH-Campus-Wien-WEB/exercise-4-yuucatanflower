@@ -89,6 +89,11 @@ function addMovie(imdbID) {
       if (response.status === 201) {
         // Task 2.2: Make sure to remove the added movie from the search results to avoid
         // giving the user the option to add it again.
+
+        const searchResultItem = document.getElementById(`search-result-${imdbID}`);
+        if (searchResultItem) {
+          searchResultItem.remove(); // Removes it from the DOM
+        }
     
         loadMovies();
         updateGenres();
@@ -137,6 +142,22 @@ function searchMovies(query) {
       // include an "Add" button for each result that calls `addMovie(imdbID)` when clicked.
       // There is a second part to this task, in `addMovie`
 
+      if (results.length === 0) {
+        new ElementBuilder("p").text(messages.noResultsFound).appendTo(resultsDiv);
+        return;
+      }
+
+      results.forEach(movie => {
+        // Create a wrapper div for each result and give it an ID so we can find it later
+        const itemDiv = new ElementBuilder("div").id(`search-result-${movie.imdbID}`).appendTo(resultsDiv);
+
+        // Add Title and Year
+        new ElementBuilder("span").text(`${movie.Title} (${movie.Year || 'N/A'}) `).appendTo(itemDiv);
+
+        // the 'Add' button
+        new ButtonBuilder("Add").onclick(() => addMovie(movie.imdbID)).appendTo(itemDiv);
+      });
+
     })
     .catch(error => {
       console.error('Search failed:', error);
@@ -168,6 +189,14 @@ window.onload = function () {
       // Task 1.2: Render a user greeting to `#userGreeting` 
       // using `firstName`, `lastName`, and the server-provided
       // login timestamp.
+
+      const loginDate = new Date(currentSession.loginTime);
+
+      // Format
+      const dateString = loginDate.toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+      const timeString = loginDate.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+
+      greetingElement.textContent = `Hi ${currentSession.firstName} ${currentSession.lastName}, du hast dich am ${dateString} um ${timeString} angemeldet.`;
     } else {
       greetingElement.textContent = messages.loggedOutGreeting;
     }
@@ -215,6 +244,29 @@ window.onload = function () {
     // Task 1.1: Implement the login submit flow to call `POST /login` 
     // with username and password, handle errors, save the response 
     // into `currentSession`, then call `updateUI()` and `loadMovies()`.
+
+    // Task 1.1: Implement the login submit flow
+    const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON object
+
+    fetch("/login", {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+        .then(response => {
+          if (!response.ok) throw new Error(messages.loginFailed);
+          return response.json(); // Parse the returned session object
+        })
+        .then(userData => {
+          currentSession = userData; // Save to current session
+          document.getElementById('loginDialog').close(); // Close Dialog
+          updateUI(); // Refresh header/nav
+          loadMovies(); // Load user's private movie collection
+        })
+        .catch(error => {
+          console.error('Login error:', error);
+          alert(messages.loginFailed);
+        });
 
   });
 

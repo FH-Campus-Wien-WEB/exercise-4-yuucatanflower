@@ -55,6 +55,16 @@
     <!-- Task 2.1: Add a search dialog markup. Make sure the ids of the elements 
      match the ones used in index.js. Your dialog needs a form and submit and cancel
      buttons. -->
+
+    <dialog id="searchDialog">
+      <form id="searchForm">
+        <label for="query">Search OMDb:</label>
+        <input type="text" id="query" name="query" placeholder="e.g. Inception" required>
+        <button type="submit">Search</button>
+        <button type="button" id="cancelSearch">Cancel</button>
+      </form>
+      <div id="searchResults" style="margin-top: 20px;"></div>
+    </dialog>
     
   </body>
 </html>
